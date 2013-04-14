@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Basic_Auditing.Models.Audit>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Audit Records</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IPAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.URLAccessed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeAccessed)
+            </th>
+        </tr>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URLAccessed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeAccessed)
+            </td>
+        </tr>
+    }
+    </table>
+</body>
+</html>
+
